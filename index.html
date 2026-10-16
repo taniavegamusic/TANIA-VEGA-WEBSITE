@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tania Vega – Cantante y Compositora | Web Oficial</title>
   <meta name="description" content="Web oficial de Tania Vega, cantante y compositora. Escucha su música, consulta fechas de conciertos y contacta para contrataciones y prensa." />
-  <meta name="keywords" content="Tania Vega, cantante, compositora, artista musical, pop español, Lento y Pegado, Mi Perfecto Error, música española, booking, contratación artista" />
+  <meta name="keywords" content="Tania Vega, cantante, compositora, artista musical, pop español, Amiga mía, Lento y Pegado, Mi Perfecto Error, música española, booking, contratación artista" />
   <meta name="author" content="Tania Vega" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://taniavegamusic.com/" />
@@ -36,7 +36,7 @@
     "name": "Tania Vega",
     "url": "https://taniavegamusic.com",
     "image": "https://taniavegamusic.com/FOTOS%20TANIA/FOTO%20BIOGRAFIA.JPEG",
-    "description": "Tania Vega es una cantante y compositora española. Artista de pop con canciones como Lento y Pegado, Mi Perfecto Error, Offline y Corazón de Fuego.",
+    "description": "Tania Vega es una cantante y compositora española. Artista de pop con canciones como Amiga mía, Lento y Pegado, Mi Perfecto Error, Offline y Corazón de Fuego.",
     "genre": ["Pop", "Pop Latino", "Pop Español"],
     "email": "contacto@taniavegamusic.com",
     "sameAs": [
@@ -1466,8 +1466,8 @@
     .mobile-music-drawer { display: contents; }
 
     @media (max-width: 768px) {
-      /* Lento y Pegado: carta normal, ancho completo */
-      #card-lento {
+      /* Último single: carta normal, ancho completo */
+      #card-destacado {
         grid-column: 1 / -1;
       }
 
@@ -1691,8 +1691,39 @@
       </div>
       <div class="music-grid">
 
-        <!-- 1. Lento y Pegado -->
-        <div class="music-card" id="card-lento">
+        <!-- 1. Amiga mía (último lanzamiento) -->
+        <div class="music-card" id="card-destacado">
+          <div class="music-cover">
+            <img src="DISCOS FOTOS TANIA/amiga mia.jpg" alt="Amiga mía" />
+          </div>
+          <div class="music-card-body">
+            <div class="music-title">Amiga mía</div>
+            <span class="music-listen-btn" data-i18n="music-listen">Escuchar</span>
+            <div class="music-platform-icons">
+              <a href="https://open.spotify.com/track/3nnPGkUuNwLkQbLVlBmGnN?si=61955370b39a41a2" class="spotify-icon" aria-label="Spotify" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Spotify
+              </a>
+              <a href="https://youtu.be/41t-x_-J1SM?si=UhFD5tqOqMX3FEUx" class="youtube-icon" aria-label="YouTube" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+                YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTÓN MI MÚSICA (solo móvil) -->
+        <button class="mobile-music-toggle" id="mobile-music-toggle" onclick="toggleMiMusica()" aria-expanded="false">
+          <span class="mobile-music-toggle-text" data-i18n="mobile-folder">Mi Música</span>
+          <span class="mobile-music-toggle-count" data-i18n="mobile-songs">4 canciones</span>
+          <span class="mobile-music-toggle-arrow">▼</span>
+        </button>
+
+        <!-- CARPETA MI MÚSICA (resto de canciones) -->
+        <div class="mobile-music-drawer" id="mobile-music-drawer">
+
+        <!-- 2. Lento y Pegado -->
+        <div class="music-card">
           <div class="music-cover">
             <img src="DISCOS FOTOS TANIA/lento y pegado.PNG" alt="Lento y Pegado" />
           </div>
@@ -1712,17 +1743,7 @@
           </div>
         </div>
 
-        <!-- BOTÓN MI MÚSICA (solo móvil) -->
-        <button class="mobile-music-toggle" id="mobile-music-toggle" onclick="toggleMiMusica()" aria-expanded="false">
-          <span class="mobile-music-toggle-text" data-i18n="mobile-folder">Mi Música</span>
-          <span class="mobile-music-toggle-count" data-i18n="mobile-songs">3 canciones</span>
-          <span class="mobile-music-toggle-arrow">▼</span>
-        </button>
-
-        <!-- CARPETA MI MÚSICA (resto de canciones) -->
-        <div class="mobile-music-drawer" id="mobile-music-drawer">
-
-        <!-- 2. Mi Perfecto Error -->
+        <!-- 3. Mi Perfecto Error -->
         <div class="music-card">
           <div class="music-cover">
             <img src="DISCOS FOTOS TANIA/mi perfecto error.JPEG" alt="Mi Perfecto Error" />
@@ -1743,7 +1764,7 @@
           </div>
         </div>
 
-        <!-- 3. Offline -->
+        <!-- 4. Offline -->
         <div class="music-card">
           <div class="music-cover">
             <img src="DISCOS FOTOS TANIA/offline.PNG" alt="Offline" />
@@ -1764,7 +1785,7 @@
           </div>
         </div>
 
-        <!-- 4. Corazón de Fuego -->
+        <!-- 5. Corazón de Fuego -->
         <div class="music-card">
           <div class="music-cover">
             <img src="DISCOS FOTOS TANIA/corazon de fuego.JPG" alt="Corazón de Fuego" />
@@ -2213,7 +2234,7 @@
         'music-soon': 'Próximamente 26/06/26',
         'music-listen': 'Escuchar',
         'mobile-folder': 'Mi Música',
-        'mobile-songs': '3 canciones',
+        'mobile-songs': '4 canciones',
         'platform-listen': 'Escuchar →',
         'platforms-title': 'Escúchame en todas las <span>Plataformas</span>',
         'social-title': 'Sígueme en mis <span>Redes Sociales</span>',
@@ -2258,7 +2279,7 @@
         'music-soon': 'Coming Soon 26/06/26',
         'music-listen': 'Listen',
         'mobile-folder': 'My Music',
-        'mobile-songs': '3 songs',
+        'mobile-songs': '4 songs',
         'platform-listen': 'Listen →',
         'platforms-title': 'Listen to me on all <span>Platforms</span>',
         'social-title': 'Follow me on <span>Social Media</span>',
