@@ -636,5 +636,22 @@
     }
   </script>
 
+  <!-- Google Analytics: solo se carga si la persona aceptó las cookies en la página principal -->
+  <script>
+    (function() {
+      try {
+        if (localStorage.getItem('cookie_consent') !== 'accepted') return;
+      } catch (e) { return; }
+      var GA_ID = 'G-P5RGZZFYLX';
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', GA_ID, { anonymize_ip: true });
+    })();
+  </script>
 </body>
 </html>
